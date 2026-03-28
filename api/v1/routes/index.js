@@ -1,3 +1,4 @@
+const dashboardRoute = require("./dashboard.route");
 const topicRoute = require("./topic.route");
 const answerRoute = require("./answer.route");
 const questionRoute = require("./question.route");
@@ -8,6 +9,7 @@ const uploadRoute = require("./upload.route");
 module.exports = (app) => {
   const version = `/api/v1`;
 
+  app.use(`${version}/dashboard`, dashboardRoute);
   app.use(`${version}/topics`, topicRoute);
   app.use(`${version}/answers`, answerRoute);
   app.use(`${version}/questions`, questionRoute);
